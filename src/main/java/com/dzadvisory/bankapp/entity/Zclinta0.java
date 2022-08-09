@@ -11,35 +11,35 @@ import javax.persistence.*;
 @Table(name="zclinta0")
 public class Zclinta0 {
 
-        @Id @Column @Getter @Setter
+        @Id @Column
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private String CLINTANUM;
+        private int CLINTANUM;
 
-        @Column @Getter @Setter
+        @Column
         private int CLINTAETA;
 
-        @Column @Getter @Setter
+        @Column
         private String CLINTATYP;
 
-        @Column @Getter @Setter
+        @Column
         private double CLINTAPLA;
 
-        @Column @Getter @Setter
+        @Column
         private String CLINTATYN;
 
-        @Column @Getter @Setter
+        @Column
         private String CLINTASEQ;
 
-        @Column @Getter @Setter
+        @Column
         private String CLINTANUT;
 
-        @Column @Getter @Setter
+        @Column
         private String CLINTAOPT;
 
-        @Column @Getter @Setter
+        @Column
         private int SABVERSION;
 
-        @Column @Getter @Setter
+        @Column
         private String FILLER;
 
 }

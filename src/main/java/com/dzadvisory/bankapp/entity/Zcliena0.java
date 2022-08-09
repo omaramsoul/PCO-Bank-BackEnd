@@ -15,121 +15,121 @@ public class Zcliena0 {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int CLIENACLI;
 
-    @Column @Getter @Setter
+    @Column
     private int CLIENAETB;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENAETA;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENARA1;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENARA2;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENASIG;
 
-    @Column @Getter @Setter
+    @Column
     private int CLIENASRN;
 
-    @Column @Getter @Setter
+    @Column
     private double CLIENASRT;
 
-    @Column @Getter @Setter
+    @Column
     private double CLIENADNA;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENAREG;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENANAT;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENARSD;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENARES;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENAECO;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENAACT;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENAPAI;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENACRD;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENAADM;
 
-    @Column @Getter @Setter
+    @Column
     private double CLIENAATR;
 
-    @Column @Getter @Setter
+    @Column
     private double CLIENABIL;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENACAT;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENACOT;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENACHQ;
 
-    @Column @Getter @Setter
+    @Column
     private double CLIENADAT;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENASAC;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENAGEO;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENAENT;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENAMES;
 
-    @Column @Getter @Setter
+    @Column
     private double CLIENAPAY;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENAFIL;
 
-    @Column @Getter @Setter
+    @Column
     private double CLIENABIM;
 
-    @Column @Getter @Setter
+    @Column
     private int CLIENADOU;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENALI1;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENALI2;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENAEXT;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENACOL;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENATIE;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENASEL;
 
-    @Column @Getter @Setter
+    @Column
     private String CLIENAPCS;
 
-    @Column @Getter @Setter
+    @Column
     private int CLIENACRE;
 
 }
