@@ -9,7 +9,7 @@ public interface Zcliena0Service {
 
     public List<Zcliena0> getAllClients();
 
-    public Zcliena0 getClientByID(int theClientId);
+    public List<Zcliena0> getClientByID(int theClientId);
 
     public List<Zclinta0> getAllContacts();
 

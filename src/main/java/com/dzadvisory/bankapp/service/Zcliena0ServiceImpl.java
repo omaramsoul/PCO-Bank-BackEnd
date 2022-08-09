@@ -28,7 +28,7 @@ public class Zcliena0ServiceImpl implements Zcliena0Service {
 
     @Override
     @Transactional
-    public Zcliena0 getClientByID(int theClientID) {
+    public List<Zcliena0> getClientByID(int theClientID) {
         return Zcliena0Dao.getClientByID(theClientID);
     }
 

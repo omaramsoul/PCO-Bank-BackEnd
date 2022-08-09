@@ -5,6 +5,7 @@ import com.dzadvisory.bankapp.entity.Zclinta0;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -15,6 +16,9 @@ import java.util.List;
 public class Zcliena0DaoImpl implements Zcliena0Dao {
 
     private EntityManager entityManager;
+
+    @Value("${client.informations.query}")
+    private String query;
 
     @Autowired
     public Zcliena0DaoImpl(EntityManager theEntityManager) {
@@ -33,12 +37,14 @@ public class Zcliena0DaoImpl implements Zcliena0Dao {
     }
 
     @Override
-    public Zcliena0 getClientByID(@PathVariable int theClientID) {
+    public List<Zcliena0> getClientByID(@PathVariable int theClientID) {
 
         Session currentSession = entityManager.unwrap(Session.class);
-        Zcliena0 theZcliena0 = currentSession.get(Zcliena0.class, theClientID);
+        Query<Zcliena0> theQuery = currentSession.createQuery(query);
+        theQuery.setParameter("clientId", theClientID);
+        List<Zcliena0> clientInfos = theQuery.getResultList();
 
-        return theZcliena0;
+        return clientInfos;
     }
 
     @Override
