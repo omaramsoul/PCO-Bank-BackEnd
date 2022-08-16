@@ -1,10 +1,12 @@
 package com.dzadvisory.bankapp.rest;
 
+import com.dzadvisory.bankapp.dto.Zcliena0Dto;
 import com.dzadvisory.bankapp.entity.*;
 import com.dzadvisory.bankapp.service.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -16,17 +18,20 @@ public class Zcliana0RestController {
     private Zautsy10Service zautsy10Service;
     private Zincact0Service zincact0Service;
     private Ztitula0Service ztitula0Service;
+    private Zdecmou0Service zdecmou0Service;
 
     public Zcliana0RestController(Zcliena0Service zcliena0service,
                                   Zclinta0Service zclinta0Service,
                                   Zautsy10Service zautsy10Service,
                                   Zincact0Service zincact0Service,
-                                  Ztitula0Service ztitula0Service) {
+                                  Ztitula0Service ztitula0Service,
+                                  Zdecmou0Service zdecmou0Service) {
         this.zcliena0service = zcliena0service;
         this.zclinta0Service = zclinta0Service;
         this.zautsy10Service = zautsy10Service;
         this.zincact0Service = zincact0Service;
         this.ztitula0Service = ztitula0Service;
+        this.zdecmou0Service = zdecmou0Service;
     }
 
 
@@ -37,43 +42,49 @@ public class Zcliana0RestController {
 
 
     //  ------- Client Informations API -------
-    @GetMapping("/client/{theClientID}/info")
-    public List<Zcliena0> getClientByID(@PathVariable int theClientID) {
+    @GetMapping("/client/{theClientID}")
+    public List<Object> getClientByID(@PathVariable int theClientID) {
         return zcliena0service.getClientByID(theClientID);
     }
 
-    @GetMapping("/contacts")
-    public List<Zclinta0> getAllContacts() {
-        return zcliena0service.getAllContacts();
+    @GetMapping("/client/search/{clientId}")
+    public List<Object> searchClientById(@PathVariable int clientId) {
+        return zcliena0service.searchClientById(clientId);
     }
 
 
     //  ------- Client Contacts API -------
     @GetMapping("/client/{clientId}/contacts")
-    public List<Zclinta0> getClientContactById(@PathVariable int clientId) {
+    public List<Object> getClientContactById(@PathVariable int clientId) {
         return zclinta0Service.getClientContactsById(clientId);
     }
 
 
     //  ------- Client Aurizations API -------
     @GetMapping("/client/{clientId}/autorisations")
-    public List<Zautsy10> getClientAutorization(@PathVariable String clientId) {
+    public List<Object> getClientAutorization(@PathVariable String clientId) {
         return zautsy10Service.getClientAutorization(clientId);
     }
 
 
     //  ------- Client Impayes API -------
     @GetMapping("/client/{clientId}/impayes")
-    public List<Zincact0> getClientImpayes(@PathVariable String clientId) {
+    public List<Object> getClientImpayes(@PathVariable String clientId) {
         return zincact0Service.getClientImpayes(clientId);
     }
 
 
     //  ------- Client Comptes API -------
     @GetMapping("/client/{clientId}/comptes")
-    public List<Ztitula0> getClientComptes(@PathVariable String clientId) {
+    public List<Object> getClientComptes(@PathVariable String clientId) {
         return ztitula0Service.getClientComptes(clientId);
     }
 
+
+    //  ------- Client MEA API -------
+    @GetMapping("/client/{clientId}/mea")
+    public List<Object> getClientMEA(@PathVariable String clientId) {
+        return zdecmou0Service.getClientMEA(clientId);
+    }
 
 }

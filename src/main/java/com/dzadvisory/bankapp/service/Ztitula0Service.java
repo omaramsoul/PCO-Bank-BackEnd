@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface Ztitula0Service {
 
-    public List<Ztitula0> getClientComptes(String clientId);
+    public List<Object> getClientComptes(String clientId);
 
 }

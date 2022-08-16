@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface Zclinta0Service {
 
-    public List<Zclinta0> getClientContactsById(int clientId);
+    public List<Object> getClientContactsById(int clientId);
 
 }

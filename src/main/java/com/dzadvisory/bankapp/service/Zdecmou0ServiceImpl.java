@@ -1,7 +1,8 @@
 package com.dzadvisory.bankapp.service;
 
-import com.dzadvisory.bankapp.dao.Zclinta0Dao;
-import com.dzadvisory.bankapp.entity.Zclinta0;
+import com.dzadvisory.bankapp.dao.Zdecmou0Dao;
+import com.dzadvisory.bankapp.dao.Zdecmou0DaoImpl;
+import com.dzadvisory.bankapp.entity.Zdecmou0;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -11,27 +12,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class Zclinta0ServiceImpl implements Zclinta0Service{
+public class Zdecmou0ServiceImpl implements Zdecmou0Service{
 
-    private Zclinta0Dao zclinta0Dao;
+    private Zdecmou0Dao zdecmou0Dao;
     private List<Object> listOfColumnsAndData = new ArrayList<>();
 
-    @Value("#{${client.contacts.columns}}")
+    @Value("#{${client.mea.columns}}")
     private List<String> listOfColumns;
 
-
     @Autowired
-    public Zclinta0ServiceImpl(Zclinta0Dao zclinta0Dao) {
-        this.zclinta0Dao = zclinta0Dao;
+    public Zdecmou0ServiceImpl(Zdecmou0Dao zdecmou0Dao) {
+        this.zdecmou0Dao = zdecmou0Dao;
     }
-
 
     @Override
     @Transactional
-    public List<Object> getClientContactsById(int clientId) {
+    public List<Object> getClientMEA(String clientId) {
         listOfColumnsAndData.clear();
         listOfColumnsAndData.add(listOfColumns);
-        listOfColumnsAndData.addAll(zclinta0Dao.getClientContactsById(clientId));
+        listOfColumnsAndData.addAll(zdecmou0Dao.getClientMEA(clientId));
         return listOfColumnsAndData;
     }
+
 }

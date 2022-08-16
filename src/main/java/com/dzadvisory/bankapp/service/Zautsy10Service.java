@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface Zautsy10Service {
 
-    public List<Zautsy10> getClientAutorization(String clientId);
+    public List<Object> getClientAutorization(String clientId);
 
 }

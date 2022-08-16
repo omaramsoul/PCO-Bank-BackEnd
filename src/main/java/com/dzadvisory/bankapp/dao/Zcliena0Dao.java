@@ -4,6 +4,7 @@ import com.dzadvisory.bankapp.entity.Zcliena0;
 import com.dzadvisory.bankapp.entity.Zclinta0;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface Zcliena0Dao {
 
@@ -11,6 +12,6 @@ public interface Zcliena0Dao {
 
     public List<Zcliena0> getClientByID(int theClientId);
 
-    public List<Zclinta0> getAllContacts();
+    public List<Zcliena0> searchClientById(int clientId);
 
 }
