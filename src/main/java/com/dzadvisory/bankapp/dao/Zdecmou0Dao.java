@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface Zdecmou0Dao {
 
-    public List<Zdecmou0> getClientMEA(String client);
+    public List<Zdecmou0> getClientMEA(String clientCompte);
 
 }

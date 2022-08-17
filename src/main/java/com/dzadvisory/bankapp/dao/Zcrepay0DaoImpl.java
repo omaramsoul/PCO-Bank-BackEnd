@@ -1,6 +1,5 @@
 package com.dzadvisory.bankapp.dao;
 
-import com.dzadvisory.bankapp.entity.Zclinta0;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,31 +8,37 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.persistence.EntityManager;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class Zclinta0DaoImpl implements Zclinta0Dao{
+public class Zcrepay0DaoImpl implements Zcrepay0Dao{
 
     private EntityManager entityManager;
+    private List<Object> listOfColumnAndData = new ArrayList<>();
 
-    @Value("${client.contacts.query}")
+    @Value("#{${client.credits.columns}}")
+    private List<String> listOfColumns;
+
+    @Value("${client.credits.query}")
     private String query;
 
     @Autowired
-    public Zclinta0DaoImpl(EntityManager entityManager) {
+    public Zcrepay0DaoImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
     @Override
-    public List<Zclinta0> getClientContactsById(@PathVariable int clientId) {
+    public List<Object> getClientCredits(@PathVariable int clientId) {
 
+        listOfColumnAndData.clear();
         Session currentSession = entityManager.unwrap(Session.class);
-        Query<Zclinta0> theQuery = currentSession.createQuery(query);
+        Query<Object> theQuery = currentSession.createQuery(query);
         theQuery.setParameter("clientId", clientId);
-        List<Zclinta0> clientContacts = theQuery.getResultList();
+        listOfColumnAndData.add(listOfColumns);
+        listOfColumnAndData.addAll(theQuery.getResultList());
 
-        return clientContacts;
+        return listOfColumnAndData;
     }
-
 
 }

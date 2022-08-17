@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Table(name="zclinta0")
 public class Zclinta0 {
 

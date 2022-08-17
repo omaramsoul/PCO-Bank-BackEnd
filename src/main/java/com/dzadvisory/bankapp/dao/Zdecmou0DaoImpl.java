@@ -26,11 +26,11 @@ public class Zdecmou0DaoImpl implements Zdecmou0Dao{
 
 
     @Override
-    public List<Zdecmou0> getClientMEA(@PathVariable String clientId) {
+    public List<Zdecmou0> getClientMEA(@PathVariable String clientCompte) {
 
         Session currentSession = entityManager.unwrap(Session.class);
         Query<Zdecmou0> theQuery = currentSession.createQuery(query);
-        theQuery.setParameter("clientId", clientId);
+        theQuery.setParameter("clientCompte", clientCompte);
         List<Zdecmou0> clientMEA = theQuery.getResultList();
 
         return clientMEA;

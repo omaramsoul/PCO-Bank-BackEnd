@@ -27,10 +27,10 @@ public class Zdecmou0ServiceImpl implements Zdecmou0Service{
 
     @Override
     @Transactional
-    public List<Object> getClientMEA(String clientId) {
+    public List<Object> getClientMEA(String clientCompte) {
         listOfColumnsAndData.clear();
         listOfColumnsAndData.add(listOfColumns);
-        listOfColumnsAndData.addAll(zdecmou0Dao.getClientMEA(clientId));
+        listOfColumnsAndData.addAll(zdecmou0Dao.getClientMEA(clientCompte));
         return listOfColumnsAndData;
     }
 

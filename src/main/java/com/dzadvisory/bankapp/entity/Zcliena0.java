@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Entity
 @Data @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Table(name="zcliena0")
 public class Zcliena0 {
 
@@ -132,10 +131,4 @@ public class Zcliena0 {
     @Column
     private int CLIENACRE;
 
-    public Zcliena0(int CLIENACLI, String CLIENARA1, int CLIENASRN, String CLIENARES) {
-        this.CLIENACLI = CLIENACLI;
-        this.CLIENARA1 = CLIENARA1;
-        this.CLIENASRN = CLIENASRN;
-        this.CLIENARES = CLIENARES;
-    }
 }
