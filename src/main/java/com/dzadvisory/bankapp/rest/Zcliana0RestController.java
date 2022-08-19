@@ -42,54 +42,55 @@ public class Zcliana0RestController {
     }
 
 
-    //------------------------------ Client Informations API ------------------------------
+    //------------------------------ return les informations du client ------------------------------
     @GetMapping("/client/{theClientID}/informations")
     public List<Object> getClientByID(@PathVariable int theClientID) {
         return zcliena0service.getClientByID(theClientID);
     }
 
+    //------------------------------ return un client  ------------------------------
     @GetMapping("/client/search/{clientId}")
     public List<Object> searchClientById(@PathVariable int clientId) {
         return zcliena0service.searchClientById(clientId);
     }
 
 
-    //------------------------------ Client Contacts API ------------------------------
+    //------------------------------ return les contacts d'un client ------------------------------
     @GetMapping("/client/{clientId}/contacts")
     public List<Object> getClientContactById(@PathVariable int clientId) {
         return zclinta0Service.getClientContactsById(clientId);
     }
 
 
-    //------------------------------ Client Aurizations API ------------------------------
+    //------------------------------ return les autorisations d'un client ------------------------------
     @GetMapping("/client/{clientId}/autorisations")
     public List<Object> getClientAutorization(@PathVariable String clientId) {
         return zautsy10Service.getClientAutorization(clientId);
     }
 
 
-    //------------------------------ Client Impayes API ------------------------------
+    //------------------------------ return les impayés d'un client ------------------------------
     @GetMapping("/client/{clientId}/impayes")
     public List<Object> getClientImpayes(@PathVariable String clientId) {
         return zincact0Service.getClientImpayes(clientId);
     }
 
 
-    //------------------------------ Client Comptes API ------------------------------
+    //------------------------------ return les comptes d'un client ------------------------------
     @GetMapping("/client/{clientId}/comptes")
     public List<Object> getClientComptes(@PathVariable String clientId) {
         return ztitula0Service.getClientComptes(clientId);
     }
 
 
-    //------------------------------ Client MEA API ------------------------------
+    //------------------------------ return les MEA d'un client ------------------------------
     @GetMapping("/client/{clientId}/mea")
     public List<Object> getClientMEA(@PathVariable String clientId) {
         return zdecmou0Service.getClientMEA(clientId);
     }
 
 
-    //------------------------------ Client Credits API ------------------------------
+    //------------------------------ return les crédits d'un client ------------------------------
     @GetMapping("/client/{clientId}/credits")
     public List<Object> getClientCredits(@PathVariable int clientId) {
         return zcrepay0Service.getClientCredits(clientId);

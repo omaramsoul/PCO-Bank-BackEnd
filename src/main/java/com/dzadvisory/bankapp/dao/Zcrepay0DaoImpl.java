@@ -1,5 +1,6 @@
 package com.dzadvisory.bankapp.dao;
 
+import com.dzadvisory.bankapp.entity.Zcrepay0;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +16,6 @@ import java.util.List;
 public class Zcrepay0DaoImpl implements Zcrepay0Dao{
 
     private EntityManager entityManager;
-    private List<Object> listOfColumnAndData = new ArrayList<>();
-
-    @Value("#{${client.credits.columns}}")
-    private List<String> listOfColumns;
 
     @Value("${client.credits.query}")
     private String query;
@@ -29,16 +26,15 @@ public class Zcrepay0DaoImpl implements Zcrepay0Dao{
     }
 
     @Override
+    // Implémentation de la méthode retournant les crédits du client
     public List<Object> getClientCredits(@PathVariable int clientId) {
 
-        listOfColumnAndData.clear();
         Session currentSession = entityManager.unwrap(Session.class);
         Query<Object> theQuery = currentSession.createQuery(query);
         theQuery.setParameter("clientId", clientId);
-        listOfColumnAndData.add(listOfColumns);
-        listOfColumnAndData.addAll(theQuery.getResultList());
+        List<Object> clientCredits = theQuery.getResultList();
 
-        return listOfColumnAndData;
+        return clientCredits;
     }
 
 }

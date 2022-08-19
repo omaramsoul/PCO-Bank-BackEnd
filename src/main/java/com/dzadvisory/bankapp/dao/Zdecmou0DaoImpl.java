@@ -26,6 +26,7 @@ public class Zdecmou0DaoImpl implements Zdecmou0Dao{
 
 
     @Override
+    // Implémentation de la méthode retournant les MEA du client
     public List<Zdecmou0> getClientMEA(@PathVariable String clientCompte) {
 
         Session currentSession = entityManager.unwrap(Session.class);
