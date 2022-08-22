@@ -3,9 +3,7 @@ package com.dzadvisory.bankapp.rest;
 import com.dzadvisory.bankapp.entity.*;
 import com.dzadvisory.bankapp.service.*;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -18,7 +16,9 @@ public class Zcliana0RestController {
     private Zincact0Service zincact0Service;
     private Ztitula0Service ztitula0Service;
     private Zdecmou0Service zdecmou0Service;
+    private Zcptslj0Service zcptslj0Service;
     private Zcrepay0Service zcrepay0Service;
+    /* ajoutez ici ce qui est demandé dans l'étape 14  */
 
     public Zcliana0RestController(Zcliena0Service zcliena0service,
                                   Zclinta0Service zclinta0Service,
@@ -26,7 +26,9 @@ public class Zcliana0RestController {
                                   Zincact0Service zincact0Service,
                                   Ztitula0Service ztitula0Service,
                                   Zdecmou0Service zdecmou0Service,
-                                  Zcrepay0Service zcrepay0Service) {
+                                  Zcrepay0Service zcrepay0Service,
+                                  Zcptslj0Service zcptslj0Service
+                                  /* ajoutez ici ce qui est demandé dans l'étape 14  */) {
         this.zcliena0service = zcliena0service;
         this.zclinta0Service = zclinta0Service;
         this.zautsy10Service = zautsy10Service;
@@ -34,7 +36,28 @@ public class Zcliana0RestController {
         this.ztitula0Service = ztitula0Service;
         this.zdecmou0Service = zdecmou0Service;
         this.zcrepay0Service = zcrepay0Service;
+        this.zcptslj0Service = zcptslj0Service;
+        /* ajoutez ici ce qui est demandé dans l'étape 14  */
     }
+
+
+    /* ajoutez ici ce qui est demandé dans l'étape 14  */
+    /*---------------------------------------------------------------------------------------------
+
+    @GetMapping("/ajouter_mapping")
+    public List<votre_entité> nom_fonction() {
+        return nom_interface_9.nom_fonction();
+    }
+
+    ---------------------------------------------------------------------------------------------*/
+
+
+    //------------------------------ return le solde du client ------------------------------
+    @GetMapping("/client/{clientCompte}/solde")
+    public List<Object> getClientSolde(@PathVariable String clientCompte) {
+        return zcptslj0Service.getClientSolde(clientCompte);
+    }
+
 
     @GetMapping("/clients")
     public List<Zcliena0> getAllClients() {

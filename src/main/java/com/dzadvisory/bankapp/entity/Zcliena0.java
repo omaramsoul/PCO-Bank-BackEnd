@@ -10,8 +10,7 @@ import javax.persistence.*;
 @Table(name="zcliena0")
 public class Zcliena0 {
 
-    @Id @Column @Getter @Setter
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @Column
     private int CLIENACLI;
 
     @Column
