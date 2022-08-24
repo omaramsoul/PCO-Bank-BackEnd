@@ -52,11 +52,7 @@ public class Zcliana0RestController {
     ---------------------------------------------------------------------------------------------*/
 
 
-    //------------------------------ return le solde du client ------------------------------
-    @GetMapping("/client/{clientCompte}/solde")
-    public List<Object> getClientSolde(@PathVariable String clientCompte) {
-        return zcptslj0Service.getClientSolde(clientCompte);
-    }
+
 
 
     @GetMapping("/clients")
@@ -118,7 +114,11 @@ public class Zcliana0RestController {
     public List<Object> getClientCredits(@PathVariable int clientId) {
         return zcrepay0Service.getClientCredits(clientId);
     }
-
+    //------------------------------ return les soldes journaliers du client ------------------------------
+    @GetMapping("/client/{clientCompte}/solde")
+    public List<Object> getClientSolde(@PathVariable String clientCompte) {
+        return zcptslj0Service.getClientSolde(clientCompte);
+    }
 
 
 }
